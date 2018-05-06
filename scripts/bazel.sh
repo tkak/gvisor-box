@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/bash -x
 
-sudo apt-get install -y pkg-config zip g++ zlib1g-dev unzip python
+sudo apt-get install openjdk-8-jdk
 
-curl -OL https://github.com/bazelbuild/bazel/releases/download/0.13.0/bazel-0.13.0-installer-linux-x86_64.sh
+echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
 
-chmod +x bazel-0.13.0-installer-linux-x86_64.sh
+curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
 
-./bazel-0.13.0-installer-linux-x86_64.sh
+sudo apt-get update && sudo apt-get install -y bazel
 

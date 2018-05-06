@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 sudo apt-get update
 
@@ -20,3 +20,5 @@ sudo add-apt-repository \
 sudo apt-get update
 
 sudo apt-get install -y docker-ce
+
+sudo usermod -a -G docker vagrant
