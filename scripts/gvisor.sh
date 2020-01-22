@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-sudo apt-get install -y git
+sudo apt-get install -y git python
 
 git clone https://gvisor.googlesource.com/gvisor gvisor
 
